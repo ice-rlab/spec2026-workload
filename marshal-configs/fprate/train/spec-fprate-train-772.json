@@ -1,0 +1,25 @@
+{
+  "name": "spec-fprate-train-772",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh fprate train 772.marian_r",
+  "overlay": "Speckle/build/overlay/fprate/train",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d train -s fprate",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/fprate.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "772.marian_r",
+      "command": "/fprate.sh 772.marian_r --copies 1"
+    }
+  ]
+}

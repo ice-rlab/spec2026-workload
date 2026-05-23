@@ -1,3 +1,4 @@
 [submodule "Speckle"]
-	path = speckle
+	path = Speckle
 	url = git@github.com:ice-rlab/Speckle.git
+	branch = spec2026

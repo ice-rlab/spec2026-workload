@@ -1,0 +1,25 @@
+{
+  "name": "spec-fpspeed-train-811",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh fpspeed train 811.tealeaf_s",
+  "overlay": "Speckle/build/overlay/fpspeed/train",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d train -s fpspeed",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/fpspeed.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "811.tealeaf_s",
+      "command": "/fpspeed.sh 811.tealeaf_s --copies 1"
+    }
+  ]
+}

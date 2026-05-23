@@ -1,0 +1,25 @@
+{
+  "name": "spec-intspeed-ref-846",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh intspeed ref 846.minizinc_s",
+  "overlay": "Speckle/build/overlay/intspeed/ref",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d ref -s intspeed",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/intspeed.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "846.minizinc_s",
+      "command": "/intspeed.sh 846.minizinc_s --copies 1"
+    }
+  ]
+}

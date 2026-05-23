@@ -1,0 +1,25 @@
+{
+  "name": "spec-fprate-train-748",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh fprate train 748.flightdm_r",
+  "overlay": "Speckle/build/overlay/fprate/train",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d train -s fprate",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/fprate.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "748.flightdm_r",
+      "command": "/fprate.sh 748.flightdm_r --copies 1"
+    }
+  ]
+}

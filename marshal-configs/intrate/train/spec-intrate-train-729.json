@@ -1,0 +1,25 @@
+{
+  "name": "spec-intrate-train-729",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh intrate train 729.abc_r",
+  "overlay": "Speckle/build/overlay/intrate/train",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d train -s intrate",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/intrate.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "729.abc_r",
+      "command": "/intrate.sh 729.abc_r --copies 1"
+    }
+  ]
+}

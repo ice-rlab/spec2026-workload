@@ -1,0 +1,25 @@
+{
+  "name": "spec-fpspeed-ref-865",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh fpspeed ref 865.roms_s",
+  "overlay": "Speckle/build/overlay/fpspeed/ref",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d ref -s fpspeed",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/fpspeed.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "865.roms_s",
+      "command": "/fpspeed.sh 865.roms_s --copies 1"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "spec-intspeed-test-821",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh intspeed test 821.gcc_s",
+  "overlay": "Speckle/build/overlay/intspeed/test",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d test -s intspeed",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/intspeed.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "821.gcc_s",
+      "command": "/intspeed.sh 821.gcc_s --copies 1"
+    }
+  ]
+}

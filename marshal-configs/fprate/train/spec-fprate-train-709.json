@@ -1,0 +1,25 @@
+{
+  "name": "spec-fprate-train-709",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh fprate train 709.cactus_r",
+  "overlay": "Speckle/build/overlay/fprate/train",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d train -s fprate",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/fprate.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "709.cactus_r",
+      "command": "/fprate.sh 709.cactus_r --copies 1"
+    }
+  ]
+}

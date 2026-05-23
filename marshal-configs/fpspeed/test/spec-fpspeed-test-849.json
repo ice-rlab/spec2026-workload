@@ -1,0 +1,25 @@
+{
+  "name": "spec-fpspeed-test-849",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh fpspeed test 849.fotonik3d_s",
+  "overlay": "Speckle/build/overlay/fpspeed/test",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d test -s fpspeed",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/fpspeed.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "849.fotonik3d_s",
+      "command": "/fpspeed.sh 849.fotonik3d_s --copies 1"
+    }
+  ]
+}

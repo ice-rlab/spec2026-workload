@@ -1,0 +1,25 @@
+{
+  "name": "spec-intspeed-train-854",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh intspeed train 854.graph500_s",
+  "overlay": "Speckle/build/overlay/intspeed/train",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d train -s intspeed",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/intspeed.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "854.graph500_s",
+      "command": "/intspeed.sh 854.graph500_s --copies 1"
+    }
+  ]
+}

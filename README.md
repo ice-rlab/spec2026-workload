@@ -1,23 +1,22 @@
-SPEC2017 Workload
-=================
+SPEC CPU 2026 Workload
+======================
 
 Requirements
 ------------
 
-- SPEC2017 installed and have `SPEC_DIR` env. variable point to installation
+- SPEC CPU 2026 installed with the `SPEC_26_DIR` environment variable pointing to the installation
 
 Getting Started
 ---------------
 
-When you first install this repository, you should update all submodules:
+When you first install this repository, update all submodules:
 
-    git submodule update --init --recursive spec2017
+    git submodule update --init --recursive spec2026
 
-After that you can use FireMarshal as normal and point to the `json` workload configs:
+After that, use FireMarshal as normal and point to the `json` workload configs:
 
     # Assuming marshal is on your $PATH
-    marshal build ./marshal-configs/spec17-intrate.json
-
+    marshal build ./marshal-configs/spec26-intrate.json
 
 See https://firemarshal.readthedocs.io/en/latest/index.html for FireMarshal
 documentation.

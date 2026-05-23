@@ -1,0 +1,25 @@
+{
+  "name": "spec-intrate-test-708",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh intrate test 708.sqlite_r",
+  "overlay": "Speckle/build/overlay/intrate/test",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d test -s intrate",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/intrate.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "708.sqlite_r",
+      "command": "/intrate.sh 708.sqlite_r --copies 1"
+    }
+  ]
+}

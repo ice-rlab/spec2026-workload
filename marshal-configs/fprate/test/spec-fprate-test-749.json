@@ -1,0 +1,25 @@
+{
+  "name": "spec-fprate-test-749",
+  "base": "br-base.json",
+  "workdir": "../../../",
+  "host-init": "build-spec.sh fprate test 749.fotonik3d_r",
+  "overlay": "Speckle/build/overlay/fprate/test",
+  "rootfs-size": "3GiB",
+  "outputs": [
+    "/output",
+    "/cpi/"
+  ],
+  "post_run_hook": "handle-results.py -d test -s fprate",
+  "files": [
+    [
+      "./Speckle/spec26-run-scripts/fprate.sh",
+      "/"
+    ]
+  ],
+  "jobs": [
+    {
+      "name": "749.fotonik3d_r",
+      "command": "/fprate.sh 749.fotonik3d_r --copies 1"
+    }
+  ]
+}
